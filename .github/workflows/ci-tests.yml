@@ -1,6 +1,7 @@
 name: Unit tests  # Name of the GitHub Actions workflow
 
 on:
+  workflow_dispatch:
   push:
     branches-ignore:
       - "main"     # Do NOT run on main
