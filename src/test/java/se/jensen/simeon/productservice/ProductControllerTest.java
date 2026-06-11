@@ -3,6 +3,7 @@ package se.jensen.simeon.productservice;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 import se.jensen.simeon.productservice.client.ProductClient;
@@ -10,6 +11,7 @@ import se.jensen.simeon.productservice.controller.ProductController;
 import se.jensen.simeon.productservice.model.Product;
 import se.jensen.simeon.productservice.model.Rating;
 import se.jensen.simeon.productservice.security.JwtUtil;
+import se.jensen.simeon.productservice.security.SecurityConfig;
 
 import java.util.List;
 
@@ -20,6 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(ProductController.class)
+@Import(SecurityConfig.class)
 public class ProductControllerTest {
 
     @Autowired
