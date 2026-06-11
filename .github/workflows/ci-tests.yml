@@ -30,6 +30,8 @@ jobs:
 
       - name: Run unit tests  # Execute Maven test phase (compiles + runs tests)
         run: mvn test --batch-mode --no-transfer-progress
+        env:
+          JWT_PUBLIC_KEY: ${{ secrets.JWT_PUBLIC_KEY }}
 
       - name: Upload test reports  # Save test results as build artifact
         if: always()  # Run this step even if tests fail
