@@ -3,7 +3,7 @@ name: Deploy ProductService
 on:
   push:
     branches:
-      - "main"
+      - "master"
 
 jobs:
   test:
