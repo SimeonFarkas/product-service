@@ -1,0 +1,8 @@
+services:
+  productservice:
+    build: .
+    container_name: productservice
+    ports:
+      - "8081:8081"
+    environment:
+      JWT_PUBLIC_KEY: ${JWT_PUBLIC_KEY}
